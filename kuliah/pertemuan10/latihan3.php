@@ -18,6 +18,9 @@ $smartphone = query("SELECT * FROM smartphone");
 
   <h3>Daftar Smartphone</h3>
 
+  <a href="tambah.php">Tambah data</a>
+  <br><br>
+
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>#</th>

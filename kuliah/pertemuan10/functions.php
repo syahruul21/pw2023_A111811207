@@ -20,3 +20,24 @@ function query($query)
 
   return $rows;
 }
+
+function tambah($data)
+{
+  $conn = koneksi();
+
+  $tipe = htmlspecialchars($data['tipe']);
+  $merk = htmlspecialchars($data['merk']);
+  $ram = htmlspecialchars($data['ram']);
+  $internal = htmlspecialchars($data['internal']);
+  $harga = htmlspecialchars($data['harga']);
+  $gambar = htmlspecialchars($data['gambar']);
+
+  $query = "INSERT INTO
+              smartphone
+            VALUES
+            (null, '$tipe', '$merk', '$ram', '$internal', '$harga', '$gambar')
+          ";
+  mysqli_query($conn, $query);
+  echo mysqli_error($conn);
+  return mysqli_affected_rows($conn);
+}
